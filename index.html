@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <title>FileForum</title>
+</head>
+<body>
+<header>
+  <div class="brand"><span>💬</span><b>FileForum</b></div>
+  <button id="clearBtn" class="ghost">Effacer mes messages</button>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Forum public de fichiers</h1>
+    <p>Écris un message, joins un fichier et partage-le avec les visiteurs de cette page.</p>
+    <div class="notice">⚠️ Cette version fonctionne localement : les messages sont enregistrés dans le navigateur. Pour un forum réellement partagé entre appareils, il faudra brancher un stockage/serveur.</div>
+  </section>
+
+  <section class="composer card">
+    <input id="pseudo" maxlength="30" placeholder="Ton pseudo (facultatif)">
+    <input id="title" maxlength="100" placeholder="Titre du message">
+    <textarea id="message" maxlength="2000" rows="4" placeholder="Écris ton message..."></textarea>
+    <div class="attach">
+      <input id="file" type="file" multiple>
+      <span id="fileInfo">Aucun fichier sélectionné</span>
+    </div>
+    <button id="postBtn" class="primary">➤ Publier</button>
+  </section>
+
+  <section class="toolbar">
+    <input id="search" placeholder="🔎 Rechercher...">
+    <select id="filter">
+      <option value="all">Tous</option>
+      <option value="audio">🎵 Audio</option>
+      <option value="video">🎬 Vidéo</option>
+      <option value="html">🌐 HTML</option>
+      <option value="image">🖼️ Images</option>
+      <option value="other">📁 Autres</option>
+    </select>
+  </section>
+
+  <section id="feed"></section>
+  <div id="empty" class="empty">Aucun message pour le moment.</div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
